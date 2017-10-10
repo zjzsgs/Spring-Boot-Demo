@@ -1,0 +1,42 @@
+#冒号后有空格
+#server:
+#  port: 8888
+#  context-path: /demo
+
+#自定义属性配置
+cupSize: A
+age: 12
+#在配置中引用配置
+content: "cupSize: ${cupSize},age: ${age}"
+#使用前缀配置
+#girl:
+#  cupSize: B
+#  age: 14
+
+#多种环境
+spring:
+  profiles:
+#    active: prod #使用prod配置
+    active: dev #使用dev配置
+    #思考：这样还是要手动选择配置文件
+    #解决：使用java -jar 的启动方式，先mvn install编译 然后在加参数启动
+    #cd到target,java -jar sb1-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev
+    #结果：多个窗口启动多个环境
+  #数据源mysql
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sb1
+    username: root
+    password:
+  #jpa
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+      #create在运行时自动创建一个表，已存在则删除重建
+      #create-drop运行结束之后删除表
+      #update更新表
+      #none不做操作
+      #validate验证表结构与实体类是否一致
+    show-sql: true
+
+
