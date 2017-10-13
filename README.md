@@ -6,4 +6,8 @@
 * `git add .`
 * `git commit -m"提交到分支"`
 * `git push origin hotel` 创建并提交到远程分支
+## git操作笔记
+* git退出> ctrl+d
+* `git branch -a` 查看所有分支
+* `git push origin girl` origin是远程仓库地址，girl是上游码流
 
